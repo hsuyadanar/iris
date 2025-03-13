@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
     // Send POST request to FastAPI
     try {
         console.log("in try")
-        const response = await fetch('http://127.0.0.1:8000/predict/', {
+        const response = await fetch('http://127.0.0.1:8888/predict/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
