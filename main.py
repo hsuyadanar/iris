@@ -5,11 +5,13 @@ import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import warnings
-
-warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
+import os
 
 # Load the trained model
-model = joblib.load('model/iris.pkl')
+model_path = os.path.join(os.path.dirname(__file__), "model", "iris.pkl")
+model = joblib.load(model_path)
+
+warnings.filterwarnings("ignore", category=UserWarning, module="sklearn")
 
 # Create Instance for API
 app = FastAPI()
